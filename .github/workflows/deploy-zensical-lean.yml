@@ -154,12 +154,31 @@ jobs:
       - name: BB2) Build Lean API documentation
         working-directory: docbuild
         run: |
-          (while true; do date; free -m | sed -n 2p; sleep 20; done) &
-          MEMLOG_PID=$!
-          trap 'kill $MEMLOG_PID' EXIT
-          MATHLIB_NO_CACHE_ON_UPDATE=1 lake update
-          LEAN_NUM_THREADS=2 lake build SE.CommonGround:docs
-        # WHY: Memory log shows whether physical memory runs out during the docs build.
+          MATHLIB_NO_CACHE_ON_UPDATE=1 lake update doc-gen4
+          lake update se-theory-common-ground
+
+          # Build first so the .olean files exist.
+          lake build SE.CommonGround
+
+          # Lean resolves an import by the first search-path entry that has a
+          # directory named after the module's first component. Common Ground
+          # and Neutral Substrate both live under SE/, so expose each package's
+          # SE tree inside the other's lib dir before doc-gen4 runs.
+          COMMON_GROUND_LIB="$GITHUB_WORKSPACE/.lake/build/lib/lean"
+          NEUTRAL_SUBSTRATE_LIB="$GITHUB_WORKSPACE/.lake/packages/se-theory-neutral-substrate/.lake/build/lib/lean"
+          merge_se() {
+            src="$1"; dst="$2"
+            mkdir -p "$dst/SE"
+            for f in "$src"/SE/* "$src"/SE.*; do
+              [ -e "$f" ] || continue
+              rel="${f#"$src"/}"
+              [ -e "$dst/$rel" ] || [ -L "$dst/$rel" ] || ln -s "$f" "$dst/$rel"
+            done
+          }
+          merge_se "$COMMON_GROUND_LIB" "$NEUTRAL_SUBSTRATE_LIB"
+          merge_se "$NEUTRAL_SUBSTRATE_LIB" "$COMMON_GROUND_LIB"
+
+          lake build SE.CommonGround:docs
 
       - name: BB3) Verify Lean API output
         run: |
