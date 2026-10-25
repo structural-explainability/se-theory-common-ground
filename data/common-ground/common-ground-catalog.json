@@ -1,0 +1,34 @@
+{
+  "schema": "se-theory-common-ground-catalog",
+  "source": "se-theory-common-ground",
+  "namespace": "se.common_ground",
+  "artifact": "common-ground-catalog",
+  "reference_paths": [
+    "reference/common-ground-types.toml",
+    "reference/common-ground-vocabulary.toml",
+    "reference/common-ground-predicates.toml",
+    "reference/common-ground-theorems.toml"
+  ],
+  "reference_artifacts": [
+    {
+      "id": "type",
+      "kind": "type",
+      "path": "reference/common-ground-types.toml"
+    },
+    {
+      "id": "vocabulary",
+      "kind": "vocabulary",
+      "path": "reference/common-ground-vocabulary.toml"
+    },
+    {
+      "id": "predicate",
+      "kind": "predicate",
+      "path": "reference/common-ground-predicates.toml"
+    },
+    {
+      "id": "theorem",
+      "kind": "theorem",
+      "path": "reference/common-ground-theorems.toml"
+    }
+  ]
+}

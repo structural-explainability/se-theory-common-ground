@@ -1,0 +1,66 @@
+# ============================================================
+# reference/theory-reference.toml
+# ============================================================
+# Theory reference configuration.
+#
+# The theory repository owns Lean source, reference TOML, and
+# generated JSON artifacts. The reusable reference kit owns the
+# generic validation, export, catalog, scaffold, and inspection
+# machinery.
+
+schema = "se-theory-reference"
+schema_version = "0.1.0"
+
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
+name = "se-theory-common-ground"
+theory = "common-ground"
+description = "Common Ground theory repository for Structural Explainability."
+
+# === Lean Public Surface ===
+
+[lean]
+root_module = "SE"
+
+public_modules = [
+    "SE",
+    "SE.CommonGround",
+    "SE.CommonGround.Logic.Propositional",
+    "SE.CommonGround.Logic.Semantics",
+    "SE.CommonGround.Logic.Consequence",
+    "SE.CommonGround.Logic.Vocabulary",
+    "SE.CommonGround.Logic.JointConsistency",
+    "SE.CommonGround.Fragment.Basic",
+    "SE.CommonGround.Scope.Interface",
+    "SE.CommonGround.Scope.InScope",
+    "SE.CommonGround.Scope.Dichotomy",
+    "SE.CommonGround.Result.Independence",
+    "SE.CommonGround.Spec",
+]
+
+test_modules = ["SETest"]
+
+# === Reference Artifacts ===
+
+[reference]
+root = "reference"
+
+# === Exported Machine Artifacts ===
+
+[export]
+root = "data/common-ground"
+
+# === Reference-Kind Mapping ===
+
+[surface_kinds]
+type = "reference/common-ground-types.toml"
+vocabulary = "reference/common-ground-vocabulary.toml"
+predicate = "reference/common-ground-predicates.toml"
+theorem = "reference/common-ground-theorems.toml"
+
+# === Export Mapping ===
+
+[export_map]
+catalog = "data/common-ground/common-ground-catalog.json"

@@ -1,0 +1,52 @@
+{
+  "schema": "se-theory-common-ground-catalog",
+  "source": "se-theory-common-ground",
+  "namespace": "se.neutral_substrate",
+  "artifact": "common-ground-catalog",
+  "reference_paths": [
+    "reference/substrate-axioms.toml",
+    "reference/dependency-registry.toml",
+    "reference/substrate-predicates.toml",
+    "reference/substrate-requirements.toml",
+    "reference/substrate-theorems.toml",
+    "reference/traceability-registry.toml",
+    "reference/substrate-types.toml"
+  ],
+  "reference_artifacts": [
+    {
+      "id": "axiom",
+      "kind": "axiom",
+      "path": "reference/substrate-axioms.toml"
+    },
+    {
+      "id": "dependency",
+      "kind": "dependency",
+      "path": "reference/dependency-registry.toml"
+    },
+    {
+      "id": "predicate",
+      "kind": "predicate",
+      "path": "reference/substrate-predicates.toml"
+    },
+    {
+      "id": "requirement",
+      "kind": "requirement",
+      "path": "reference/substrate-requirements.toml"
+    },
+    {
+      "id": "theorem",
+      "kind": "theorem",
+      "path": "reference/substrate-theorems.toml"
+    },
+    {
+      "id": "traceability",
+      "kind": "traceability",
+      "path": "reference/traceability-registry.toml"
+    },
+    {
+      "id": "type",
+      "kind": "type",
+      "path": "reference/substrate-types.toml"
+    }
+  ]
+}

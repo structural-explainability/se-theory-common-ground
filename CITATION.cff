@@ -1,0 +1,55 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# May reference upstream dependencies, but must not refer to downstream.
+# USAGE: See https://citation-file-format.github.io/ for details.
+# check with:
+# uvx cffconvert --validate
+
+cff-version: "1.2.0"
+message: "If you use this work, please cite it using the metadata in CITATION.cff."
+type: software
+
+title: "Formal Theory: Common Ground"
+version: "0.1.0" # CUSTOM: Updated to match the current release version of the project
+date-released: "2026-10-25" # CUSTOM: Updated to match the current release date of the project
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+repository-code: "https://github.com/structural-explainability/se-theory-common-ground"
+url: "https://github.com/structural-explainability/se-theory-common-ground"
+
+license: MIT
+
+abstract: >
+  Lean 4 formalization of fragment-relative common ground in Structural
+  Explainability. Given a bounded referential fragment, the theory classifies
+  frameworks by the valuations they permit on the fragment's vocabulary. A
+  framework is neutral on a vocabulary exactly when it is jointly satisfiable
+  with every satisfiable theory over that vocabulary, and every framework either
+  is neutral or conflicts with some such theory. When admissibility is the only
+  condition on frameworks, only valid commitment sets are framework-compatible,
+  so common ground for a nontrivial fragment requires an explicit condition on
+  frameworks. The theory instantiates the Neutral Substrate consequence system
+  with classical propositional logic. Results are relative to a stated fragment
+  and framework class and make no claim about the full class of admissible
+  frameworks.
+
+keywords:
+  - structural-explainability
+  - common-ground
+  - formal-theory
+  - lean4
+  - theorem-proving
+  - formal-verification
+  - admissibility
+  - interpretive-neutrality
+  - referential-common-ground
+  - framework-compatibility
+  - joint-consistency
+  - propositional-logic

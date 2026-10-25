@@ -1,0 +1,95 @@
+# ============================================================
+# Common Ground Predicates
+# se-theory-common-ground
+# ============================================================
+# Public Prop-valued definitions: truth, satisfaction, entailment, vocabularies, interfaces, and the scope condition.
+
+schema = "se-predicate-registry-1"
+kind = "predicate"
+repo = "se-theory-common-ground"
+surface_module = "SE.CommonGround"
+namespace = "SE.CommonGround"
+
+[predicate.Eval]
+order = 1
+id = "Eval"
+name = "Eval"
+lean_symbol = "SE.CommonGround.Logic.eval"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "Truth of a formula under a valuation."
+
+[predicate.Satisfies]
+order = 2
+id = "Satisfies"
+name = "Satisfies"
+lean_symbol = "SE.CommonGround.Logic.Satisfies"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "A valuation satisfies a theory when every member of the theory is true under it."
+
+[predicate.SemanticEntails]
+order = 3
+id = "SemanticEntails"
+name = "Semantic entails"
+lean_symbol = "SE.CommonGround.Logic.SemanticEntails"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "A theory semantically entails a formula when every valuation satisfying the theory makes the formula true."
+
+[predicate.VocabularyDisjoint]
+order = 4
+id = "VocabularyDisjoint"
+name = "Vocabulary disjoint"
+lean_symbol = "SE.CommonGround.Logic.VocabularyDisjoint"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Vocabulary"
+description = "Two vocabularies are disjoint when no atom belongs to both."
+
+[predicate.FormulaIn]
+order = 5
+id = "FormulaIn"
+name = "Formula in vocabulary"
+lean_symbol = "SE.CommonGround.Logic.FormulaIn"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Vocabulary"
+description = "A formula lies in a vocabulary when every atom occurring in it belongs to the vocabulary."
+
+[predicate.TheoryIn]
+order = 6
+id = "TheoryIn"
+name = "Theory in vocabulary"
+lean_symbol = "SE.CommonGround.Logic.TheoryIn"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Vocabulary"
+description = "A theory lies in a vocabulary when every member lies in the vocabulary."
+
+[predicate.Permits]
+order = 7
+id = "Permits"
+cite_id = "se110.def.Permits"
+name = "Permits"
+lean_symbol = "SE.CommonGround.Scope.Permits"
+lean_kind = "def"
+source_module = "SE.CommonGround.Scope.Interface"
+description = "A framework permits a valuation on a vocabulary when some model of the framework agrees with the valuation on the vocabulary."
+
+[predicate.NeutralOn]
+order = 8
+id = "NeutralOn"
+cite_id = "se110.def.NeutralOn"
+name = "Neutral on"
+lean_symbol = "SE.CommonGround.Scope.NeutralOn"
+lean_kind = "def"
+source_module = "SE.CommonGround.Scope.InScope"
+description = "A framework is neutral on a vocabulary when it permits every valuation of the vocabulary. The condition mentions only the vocabulary and the framework."
+
+[predicate.AvoidsVocabulary]
+order = 9
+id = "AvoidsVocabulary"
+cite_id = "se110.def.AvoidsVocabulary"
+name = "Avoids vocabulary"
+lean_symbol = "SE.CommonGround.Scope.AvoidsVocabulary"
+lean_kind = "def"
+source_module = "SE.CommonGround.Scope.InScope"
+description = "A framework avoids a vocabulary when it lies entirely in some vocabulary disjoint from it."

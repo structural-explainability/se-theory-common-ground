@@ -1,0 +1,9 @@
+{
+  "schema": "se-theory-common-ground-axiom-registry",
+  "source": "se-theory-common-ground",
+  "namespace": "se.neutral_substrate",
+  "artifact": "substrate-axiom-registry",
+  "reference_artifact": "substrate-axioms",
+  "reference_path": "reference/substrate-axioms.toml",
+  "axiom": []
+}

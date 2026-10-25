@@ -1,0 +1,164 @@
+# ============================================================
+# SE_MANIFEST.toml (Repository Declaration)
+# ============================================================
+
+schema = "se-manifest-schema"
+schema_version = "0.5.1"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
+
+# === Framework Context ===
+
+[meta]
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+purpose = "Declares this repository's role in the Structural Explainability ecosystem."
+
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
+name = "se-theory-common-ground"
+class = "theory"
+kind = "foundation"
+status = "active"
+since = "2026"
+summary = "Lean 4 formalization of fragment-relative common ground: a concrete propositional logic instantiating the Neutral Substrate consequence system, bounded referential fragments, a scope condition on frameworks defined by what they permit on the fragment vocabulary, the characterization of that condition as compatibility with every satisfiable theory over the vocabulary, a dichotomy between neutral and conflicting frameworks, and the independence of common ground from admissibility alone."
+
+# === Layer Position ===
+
+[layer]
+space = "formal-theory"
+role = "formal-derivation"
+
+# === Dependency Declarations ===
+
+[depends]
+# Foundational theory repository. Downstream Structural Explainability theories
+# may depend on this repository; this repository does not depend on them.
+optional = []
+required = [
+    { repository = "se-theory-neutral-substrate", kind = "semantic", reason = "Supplies the abstract consequence system, framework system, admissibility, and framework-compatible commitment sets that this theory instantiates and extends." },
+]
+
+# === Provided Artifacts ===
+
+[provides]
+# Theory repositories expose Lean modules and theorem sets.
+artifacts = ["lean-library", "theorem-set"]
+
+[provides.formalization.public_surface]
+kind = "lean-surface"
+status = "canonical"
+symbols = ["SE.CommonGround"]
+path = "SE/CommonGround.lean"
+reason = "Public Lean root for the Common Ground theory."
+
+[provides.formalization.joint_consistency]
+kind = "lean-theorem-set"
+status = "canonical"
+symbols = [
+    "SE.CommonGround.Logic.satisfiable_union_of_disjoint",
+]
+path = "SE/CommonGround/Logic/JointConsistency.lean"
+reason = "Machine-checked joint consistency of satisfiable theories over disjoint vocabularies in the propositional instance."
+
+[provides.formalization.interface_reduction]
+kind = "lean-theorem-set"
+status = "canonical"
+symbols = [
+    "SE.CommonGround.Scope.satisfiable_union_iff_permits",
+]
+path = "SE/CommonGround/Scope/Interface.lean"
+reason = "Machine-checked reduction of compatibility with a framework to the valuations the framework permits on the vocabulary."
+
+[provides.formalization.scope_characterization]
+kind = "lean-theorem-set"
+status = "canonical"
+symbols = [
+    "SE.CommonGround.Scope.neutralOn_of_avoids",
+    "SE.CommonGround.Scope.neutralOn_iff_compatible",
+]
+path = "SE/CommonGround/Scope/InScope.lean"
+reason = "Machine-checked characterization of frameworks neutral on a vocabulary as those compatible with every satisfiable theory over it."
+
+[provides.formalization.scope_dichotomy]
+kind = "lean-theorem-set"
+status = "canonical"
+symbols = [
+    "SE.CommonGround.Scope.dichotomy",
+]
+path = "SE/CommonGround/Scope/Dichotomy.lean"
+reason = "Machine-checked dichotomy between frameworks neutral on a vocabulary and frameworks that conflict with some satisfiable theory over it."
+
+[provides.formalization.bare_independence]
+kind = "lean-theorem-set"
+status = "canonical"
+symbols = [
+    "SE.CommonGround.Result.compatible_bare_iff_valid",
+    "SE.CommonGround.Result.not_compatible_bare_of_nontrivial",
+]
+path = "SE/CommonGround/Result/Independence.lean"
+reason = "Machine-checked independence of common ground from admissibility alone: when admissibility is the only condition on frameworks, only valid commitment sets are framework-compatible."
+
+# === Scope ===
+
+[scope]
+includes = [
+    "a concrete classical propositional logic as an instance of the Neutral Substrate consequence system",
+    "valuations, satisfaction, and semantic consequence",
+    "vocabularies and joint consistency of theories over disjoint vocabularies",
+    "bounded referential fragments",
+    "the valuations a framework permits on a vocabulary",
+    "frameworks neutral on a vocabulary and frameworks that avoid a vocabulary",
+    "characterization of neutral frameworks as compatible with every satisfiable theory over the vocabulary",
+    "the scope dichotomy",
+    "independence of common ground from admissibility alone",
+    "machine-checked Lean definitions and theorems",
+    "theory-reference declarations and generated reference artifacts",
+]
+
+excludes = [
+    "Neutral Substrate definitions and theorems, which are imported",
+    "the global Referential Common Ground assumption over the full class of admissible frameworks",
+    "justification of referential fixing semantics for any particular fragment",
+    "first-order logic with equality",
+    "identity-bearing fragments",
+    "substantive individuation theory",
+    "substantive co-reference theory",
+    "substantive persistence theory",
+    "identity-regime classification",
+    "operational identity auditing",
+    "transformation theory",
+    "interpretive-kernel constructions",
+    "Structural Explainability integration theory",
+    "domain-specific interpretation policies",
+    "domain-specific mappings or data",
+    "runtime systems",
+    "schema definitions owned by other repositories",
+]
+
+# === Validation ===
+
+[validation]
+# Validates repository declaration, manifest schema conformance,
+# reference artifacts, generated artifacts, and Lean public surface coverage.
+export_check_entrypoint = "uv run --locked se-theory-reference export --check"
+reference_entrypoint = "uv run --locked se-theory-reference validate"
+strict_entrypoint = "uv run --locked se-theory-reference validate --strict"
+
+# === Behavior / governance ===
+
+[naming]
+pattern = "se-theory-*"
+
+[governance]
+authority = "structural-explainability"
+
+# === External references ===
+
+[citation]
+cff = "CITATION.cff"
+preferred = "CITATION.cff"
+
+[traceability]
+identifier_map = "reference/theory-reference.toml"

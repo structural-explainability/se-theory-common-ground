@@ -1,0 +1,246 @@
+{
+  "schema": "se-theory-common-ground-predicate-registry",
+  "source": "se-theory-common-ground",
+  "namespace": "se.neutral_substrate",
+  "artifact": "substrate-predicate-registry",
+  "reference_artifact": "substrate-predicates",
+  "reference_path": "reference/substrate-predicates.toml",
+  "predicate": [
+    {
+      "id": "AdmissibleFramework",
+      "cite_id": "se100.def.AdmissibleFramework",
+      "name": "Admissible framework",
+      "lean_symbol": "SE.Framework.AdmissibleFramework",
+      "source_module": "SE.Framework.Admissible",
+      "description": "A framework is admissible when its commitment theory is consistent, it is evidentially grounded, and it satisfies the documented-interpretive-function conditions."
+    },
+    {
+      "id": "AttributionProposition",
+      "cite_id": "se100.def.AttributionProposition",
+      "name": "Attribution proposition",
+      "lean_symbol": "SE.CommonGround.Attribution.AttributionProposition",
+      "source_module": "SE.CommonGround.Attribution.Basic",
+      "description": "A proposition formed by attributing an asserted proposition to a source in an attribution system."
+    },
+    {
+      "id": "CausalOrNormativeProposition",
+      "name": "Causal or normative proposition",
+      "lean_symbol": "SE.CommonGround.Classification.CausalOrNormativeProposition",
+      "source_module": "SE.CommonGround.Classification.CausalNormative",
+      "description": "A proposition that is classified as causal or classified as normative in the specified context."
+    },
+    {
+      "id": "CausalProposition",
+      "name": "Causal proposition",
+      "lean_symbol": "SE.CommonGround.Classification.CausalProposition",
+      "source_module": "SE.CommonGround.Classification.CausalNormative",
+      "description": "A proposition classified as causal in a specified classification context."
+    },
+    {
+      "id": "CharacterizationHypothesis",
+      "cite_id": "se100.remark.CharacterizationHypothesis",
+      "name": "Neutrality constraint",
+      "lean_symbol": "SE.CommonGround.CharacterizationHypothesis",
+      "source_module": "SE.CommonGround.Constraint",
+      "description": "Under contestability and referential common ground, neutrality by design is equivalent to restricting foundational commitments to referential commitments and permitted attribution propositions; that restriction also excludes object-level causal or normative commitments."
+    },
+    {
+      "id": "Consistent",
+      "name": "Consistent",
+      "lean_symbol": "SE.Logic.Consistent",
+      "source_module": "SE.Logic.Consistency",
+      "description": "A commitment theory is consistent under a consequence system when it does not entail the distinguished contradiction proposition."
+    },
+    {
+      "id": "Contestability",
+      "cite_id": "se100.assump.Contestability",
+      "name": "Contestability",
+      "lean_symbol": "SE.CommonGround.Assumptions.Contestability",
+      "source_module": "SE.CommonGround.Assumptions.Contestability",
+      "description": "No contested causal or normative proposition is guaranteed at design time to be framework invariant."
+    },
+    {
+      "id": "ContestedCausalOrNormativeClass",
+      "name": "Contested causal or normative class",
+      "lean_symbol": "SE.CommonGround.Classification.ContestedCausalOrNormativeClass",
+      "source_module": "SE.CommonGround.Classification.ContestedCausalOrNormative",
+      "description": "The set of propositions satisfying the contested-causal-or-normative predicate for the selected context, substrate, and referential fixing."
+    },
+    {
+      "id": "ContestedCausalOrNormativeProposition",
+      "cite_id": "se100.def.ContestedCausalNormative",
+      "name": "Contested causal or normative proposition",
+      "lean_symbol": "SE.CommonGround.Classification.ContestedCausalOrNormativeProposition",
+      "source_module": "SE.CommonGround.Classification.ContestedCausalOrNormative",
+      "description": "A causal or normative proposition whose interpretive status is not fixed by the substrate's referential commitments in the specified context."
+    },
+    {
+      "id": "DocumentedInterpretiveFunction",
+      "name": "Documented interpretive function",
+      "lean_symbol": "SE.Framework.DocumentedInterpretiveFunction",
+      "source_module": "SE.Framework.Admissible",
+      "description": "A framework is presented as an interpretive function and has a named source, documented scope, and citable basis."
+    },
+    {
+      "id": "ExtensionStability",
+      "cite_id": "se100.def.ExtensionStability",
+      "name": "Extension stability",
+      "lean_symbol": "SE.CommonGround.Neutrality.ExtensionStability",
+      "source_module": "SE.CommonGround.Neutrality.ExtensionStability",
+      "description": "The substrate combined with each admissible framework has a consistent commitment theory."
+    },
+    {
+      "id": "FoundationalLayerRestrictedToPermittedClasses",
+      "name": "Foundational layer restricted to permitted classes",
+      "lean_symbol": "SE.CommonGround.FoundationalLayerRestrictedToPermittedClasses",
+      "source_module": "SE.CommonGround.FoundationalLayer",
+      "description": "Every substrate commitment is either a referential commitment or a permitted attribution proposition."
+    },
+    {
+      "id": "FrameworkClass",
+      "cite_id": "se100.note.FrameworkClass",
+      "name": "Framework class",
+      "lean_symbol": "SE.Framework.FrameworkClass",
+      "source_module": "SE.Framework.Class",
+      "description": "The set of carriers in a framework system that satisfy the admissible-framework predicate."
+    },
+    {
+      "id": "FrameworkCompatibleCommitmentSet",
+      "cite_id": "se100.def.FrameworkCompatibleCommitmentSet",
+      "name": "Framework-compatible commitment set",
+      "lean_symbol": "SE.CommonGround.FrameworkRelative.FrameworkCompatibleCommitmentSet",
+      "source_module": "SE.CommonGround.FrameworkRelative.CompatibleCommitmentSet",
+      "description": "A commitment theory that remains consistent when combined with the commitments of every admissible framework."
+    },
+    {
+      "id": "FrameworkInvariantProposition",
+      "cite_id": "se100.def.FrameworkInvariant",
+      "name": "Framework-invariant proposition",
+      "lean_symbol": "SE.CommonGround.FrameworkRelative.FrameworkInvariantProposition",
+      "source_module": "SE.CommonGround.FrameworkRelative.Invariant",
+      "description": "A proposition whose addition remains consistent with the substrate combined with every admissible framework."
+    },
+    {
+      "id": "FrameworkVariantProposition",
+      "cite_id": "se100.def.FrameworkVariant",
+      "name": "Framework-variant proposition",
+      "lean_symbol": "SE.CommonGround.FrameworkRelative.FrameworkVariantProposition",
+      "source_module": "SE.CommonGround.FrameworkRelative.Variant",
+      "description": "A proposition entailed by the substrate combined with one admissible framework while its negation is entailed by the substrate combined with another admissible framework."
+    },
+    {
+      "id": "GuaranteedAtDesignTime",
+      "name": "Guaranteed at design time",
+      "lean_symbol": "SE.CommonGround.GuaranteedAtDesignTime",
+      "source_module": "SE.CommonGround.DesignTimeGuarantee",
+      "description": "A proposition is guaranteed at design time when some permitted guarantee basis establishes it."
+    },
+    {
+      "id": "InterpretiveNonCommitment",
+      "cite_id": "se100.def.InterpretiveNonCommitment",
+      "name": "Interpretive non-commitment",
+      "lean_symbol": "SE.CommonGround.Neutrality.InterpretiveNonCommitment",
+      "source_module": "SE.CommonGround.Neutrality.InterpretiveNonCommitment",
+      "description": "For every framework-variant proposition, the substrate commits to neither the proposition nor its negation."
+    },
+    {
+      "id": "Neutral",
+      "name": "Neutral",
+      "lean_symbol": "SE.CommonGround.Neutrality.Neutral",
+      "source_module": "SE.CommonGround.Neutrality.ByDesign",
+      "description": "The conjunction of interpretive non-commitment and extension stability for the selected substrate and framework system."
+    },
+    {
+      "id": "NeutralByDesign",
+      "cite_id": "se100.def.NeutralityByDesign",
+      "name": "Neutrality by design",
+      "lean_symbol": "SE.CommonGround.Neutrality.NeutralByDesign",
+      "source_module": "SE.CommonGround.Neutrality.ByDesign",
+      "description": "Neutrality is guaranteed at design time by the selected design-time guarantee system."
+    },
+    {
+      "id": "NoObjectLevelCausalOrNormativeCommitment",
+      "name": "No object-level causal or normative commitment",
+      "lean_symbol": "SE.CommonGround.NoObjectLevelCausalOrNormativeCommitment",
+      "source_module": "SE.CommonGround.Constraint",
+      "description": "The substrate makes no object-level causal or normative commitment in the selected classification and interpretation context."
+    },
+    {
+      "id": "NormativeProposition",
+      "name": "Normative proposition",
+      "lean_symbol": "SE.CommonGround.Classification.NormativeProposition",
+      "source_module": "SE.CommonGround.Classification.CausalNormative",
+      "description": "A proposition classified as normative in a specified classification context."
+    },
+    {
+      "id": "ObjectLevelCausalOrNormativeCommitment",
+      "cite_id": "se100.def.ObjectLevelCausalNormativeCommitment",
+      "name": "Object-level causal or normative commitment",
+      "lean_symbol": "SE.CommonGround.Interpretation.ObjectLevelCausalOrNormativeCommitment",
+      "source_module": "SE.CommonGround.Interpretation.ObjectLevelCausalOrNormativeCommitment",
+      "description": "An object-level causal or normative proposition that is also a commitment of the selected substrate."
+    },
+    {
+      "id": "ObjectLevelCausalOrNormativeProposition",
+      "name": "Object-level causal or normative proposition",
+      "lean_symbol": "SE.CommonGround.Interpretation.ObjectLevelCausalOrNormativeProposition",
+      "source_module": "SE.CommonGround.Interpretation.ObjectLevelCausalOrNormativeCommitment",
+      "description": "A proposition that is both object-level interpretive and causal or normative in the selected classification context."
+    },
+    {
+      "id": "ObjectLevelInterpretiveProposition",
+      "cite_id": "se100.def.ObjectLevelInterpretiveProposition",
+      "name": "Object-level interpretive proposition",
+      "lean_symbol": "SE.CommonGround.Interpretation.ObjectLevelInterpretiveProposition",
+      "source_module": "SE.CommonGround.Interpretation.ObjectLevelProposition",
+      "description": "A proposition that is about referents under the substrate's referential regime and is not an attribution proposition."
+    },
+    {
+      "id": "PermittedAttributionProposition",
+      "cite_id": "se100.def.PermittedAttributionProposition",
+      "name": "Permitted attribution proposition",
+      "lean_symbol": "SE.CommonGround.Attribution.PermittedAttributionProposition",
+      "source_module": "SE.CommonGround.Attribution.Permitted",
+      "description": "An attribution proposition whose source and attributed content are fixed by an attributional basis over the substrate's referential commitments."
+    },
+    {
+      "id": "ReferentialCommitments",
+      "cite_id": "se100.def.ReferentialCommitments",
+      "name": "Referential commitments",
+      "lean_symbol": "SE.Substrate.ReferentialCommitments",
+      "source_module": "SE.Substrate.ReferentialCommitments",
+      "description": "The commitment theory containing propositions that are both substrate commitments and fixed by the substrate's referential regime."
+    },
+    {
+      "id": "ReferentialCommonGround",
+      "cite_id": "se100.assump.ReferentialCommonGround",
+      "name": "Referential common ground",
+      "lean_symbol": "SE.CommonGround.Assumptions.ReferentialCommonGround",
+      "source_module": "SE.CommonGround.Assumptions.ReferentialCommonGround",
+      "description": "The substrate's referential commitments are compatible with every admissible framework, and adjoining any permitted attribution proposition preserves that compatibility."
+    },
+    {
+      "id": "SubstrateCommitment",
+      "cite_id": "se100.def.SubstrateCommitment",
+      "name": "Substrate commitment",
+      "lean_symbol": "SE.Substrate.SubstrateCommitment",
+      "source_module": "SE.Substrate.Commitment",
+      "description": "A proposition is a substrate commitment when it is entailed by the commitment theory associated with the selected substrate."
+    },
+    {
+      "id": "SubstrateConsistency",
+      "cite_id": "se100.assump.SubstrateConsistency",
+      "name": "Substrate consistency",
+      "lean_symbol": "SE.CommonGround.Assumptions.SubstrateConsistency",
+      "source_module": "SE.CommonGround.Assumptions.SubstrateConsistency",
+      "description": "The commitment theory associated with the selected substrate is consistent under the selected consequence system."
+    },
+    {
+      "id": "SubstrateFrameworkCommitments",
+      "name": "Substrate-framework commitments",
+      "lean_symbol": "SE.CommonGround.FrameworkRelative.SubstrateFrameworkCommitments",
+      "source_module": "SE.CommonGround.FrameworkRelative.Variant",
+      "description": "The commitment theory formed by combining the selected substrate's commitments with the commitments of a selected framework."
+    }
+  ]
+}

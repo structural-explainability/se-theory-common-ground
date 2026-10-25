@@ -1,0 +1,30 @@
+# ============================================================
+# Common Ground Types
+# se-theory-common-ground
+# ============================================================
+# Public Lean types for the Common Ground theory.
+
+schema = "se-type-registry-1"
+kind = "type"
+repo = "se-theory-common-ground"
+surface_module = "SE.CommonGround"
+namespace = "SE.CommonGround"
+
+[type.Formula]
+order = 1
+id = "Formula"
+name = "Formula"
+lean_symbol = "SE.CommonGround.Logic.Formula"
+lean_kind = "inductive"
+source_module = "SE.CommonGround.Logic.Propositional"
+description = "Propositional formulas over a type of atoms: atoms, the contradiction, negation, and conjunction."
+
+[type.ReferentialFragment]
+order = 2
+id = "ReferentialFragment"
+cite_id = "se110.def.ReferentialFragment"
+name = "Referential fragment"
+lean_symbol = "SE.CommonGround.Fragment.ReferentialFragment"
+lean_kind = "structure"
+source_module = "SE.CommonGround.Fragment.Basic"
+description = "A vocabulary with a theory over it. The theory lies in the vocabulary, is satisfiable, is violated by some valuation, and the vocabulary lies inside a finite list of atoms."

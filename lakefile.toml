@@ -1,0 +1,75 @@
+# ============================================================
+# lakefile.toml
+# ============================================================
+# Declares the public Lean package identity, import surface,
+# build targets, dependencies, and verification executables.
+
+# Run with:
+# lake build
+# lake test
+# lake lint
+
+# ============================================================
+# === PROJECT IDENTITY ===
+# ============================================================
+
+name = "se-theory-common-ground"
+version = "0.1.0" # CUSTOM: Sets the current release version of the project
+license = "MIT"
+
+# ============================================================
+# === BUILD SURFACE ===
+# ============================================================
+# defaultTargets must include the public Lean library root.
+
+defaultTargets = ["SE.CommonGround"]
+testDriver = "SETest"
+lintDriver = "SELint"
+
+# ============================================================
+# === DEPENDENCIES ===
+# ============================================================
+
+[[require]]
+# We only need Set so we made our own minimal version of Mathlib.
+name = "mathlib-mini"
+git = "https://github.com/mathlib-mini/mathlib-mini.git"
+rev = "v0.1.1"
+
+[[require]]
+name = "se-theory-neutral-substrate"
+git = "https://github.com/structural-explainability/se-theory-neutral-substrate"
+rev = "v0.12.0"
+
+# ============================================================
+# === PUBLIC LIBRARY ===
+# ============================================================
+# The library downstream packages import. It must claim only the module
+# family owned by this package. Other packages own other SE.* families.
+#
+# Do not claim the shared top-level module "SE". Multiple theory packages
+# coexist in the same dependency graph, so each library must own only its
+# namespaced family (for example SE.Persistence or SE.Transformation).
+#
+# Glob forms:
+#   "A.B"    only module A.B
+#   "A.B.*"  A.B and all its submodules
+#   "A.B.+"  all submodules of A.B, but not A.B itself
+
+[[lean_lib]]
+name = "SE.CommonGround"
+roots = ["SE.CommonGround"]
+globs = [
+    "SE",
+    "SE.CommonGround.*",
+]
+
+# ============================================================
+# === TEST LIBRARY ===
+# ============================================================
+# Internal verification; not part of downstream public import surface.
+
+[[lean_lib]]
+name = "SETest"
+roots = ["SETest.CommonGround"]
+globs = ["SETest", "SETest.CommonGround.*"]

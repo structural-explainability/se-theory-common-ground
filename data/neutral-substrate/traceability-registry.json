@@ -1,0 +1,9 @@
+{
+  "schema": "se-theory-common-ground-traceability-registry",
+  "source": "se-theory-common-ground",
+  "namespace": "se.neutral_substrate",
+  "artifact": "traceability-registry",
+  "reference_artifact": "traceability-registry",
+  "reference_path": "reference/traceability-registry.toml",
+  "traceability": []
+}

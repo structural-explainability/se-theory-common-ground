@@ -1,0 +1,240 @@
+# ============================================================
+# Common Ground Theorems
+# se-theory-common-ground
+# ============================================================
+# Public semantic theorems for the Common Ground theory.
+
+schema = "se-theorem-registry-1"
+kind = "theorem"
+repo = "se-theory-common-ground"
+surface_module = "SE.CommonGround"
+namespace = "SE.CommonGround"
+
+[theorem.LanguageNeg]
+order = 1
+id = "LanguageNeg"
+name = "Language negation"
+lean_symbol = "SE.CommonGround.Logic.language_neg"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Propositional"
+description = "Negation in the propositional language over atoms is the formula negation constructor."
+
+[theorem.LanguageBottom]
+order = 2
+id = "LanguageBottom"
+name = "Language contradiction"
+lean_symbol = "SE.CommonGround.Logic.language_bottom"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Propositional"
+description = "The contradiction of the propositional language over atoms is the formula contradiction constructor."
+
+[theorem.EvalAtom]
+order = 3
+id = "EvalAtom"
+name = "Eval atom"
+lean_symbol = "SE.CommonGround.Logic.eval_atom"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "An atom is true under a valuation exactly when the valuation makes it true."
+
+[theorem.EvalBot]
+order = 4
+id = "EvalBot"
+name = "Eval contradiction"
+lean_symbol = "SE.CommonGround.Logic.eval_bot"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "The contradiction is false under any valuation."
+
+[theorem.EvalNeg]
+order = 5
+id = "EvalNeg"
+name = "Eval negation"
+lean_symbol = "SE.CommonGround.Logic.eval_neg"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "The negation of a formula is true under a valuation exactly when the formula is false under it."
+
+[theorem.EvalConj]
+order = 6
+id = "EvalConj"
+name = "Eval conjunction"
+lean_symbol = "SE.CommonGround.Logic.eval_conj"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "The conjunction of two formulas is true under a valuation exactly when both formulas are true under it."
+
+[theorem.SatisfiesUnionIff]
+order = 7
+id = "SatisfiesUnionIff"
+name = "Satisfies union"
+lean_symbol = "SE.CommonGround.Logic.satisfies_union_iff"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "A valuation satisfies the union of two theories exactly when it satisfies both."
+
+[theorem.SatisfiesMono]
+order = 8
+id = "SatisfiesMono"
+name = "Satisfies monotone"
+lean_symbol = "SE.CommonGround.Logic.satisfies_mono"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "A valuation satisfying a theory satisfies every subset of it."
+
+[theorem.SemanticEntailsBotIff]
+order = 9
+id = "SemanticEntailsBotIff"
+name = "Semantic entailment of contradiction"
+lean_symbol = "SE.CommonGround.Logic.semanticEntails_bot_iff"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "A theory semantically entails the contradiction exactly when no valuation satisfies it."
+
+[theorem.ConsistentIffSatisfiable]
+order = 10
+id = "ConsistentIffSatisfiable"
+name = "Consistent iff satisfiable"
+lean_symbol = "SE.CommonGround.Logic.consistent_iff_satisfiable"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Consequence"
+description = "In the semantic consequence system, a theory is consistent exactly when some valuation satisfies it."
+
+[theorem.EvalCongr]
+order = 11
+id = "EvalCongr"
+name = "Eval congruence"
+lean_symbol = "SE.CommonGround.Logic.eval_congr"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Vocabulary"
+description = "Valuations that agree on a vocabulary give every formula in that vocabulary the same truth value."
+
+[theorem.SatisfiesCongr]
+order = 12
+id = "SatisfiesCongr"
+name = "Satisfies congruence"
+lean_symbol = "SE.CommonGround.Logic.satisfies_congr"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.Vocabulary"
+description = "Valuations that agree on a vocabulary satisfy the same theories over it."
+
+[theorem.SpliceIffOfMem]
+order = 13
+id = "SpliceIffOfMem"
+name = "Splice on the vocabulary"
+lean_symbol = "SE.CommonGround.Logic.splice_iff_of_mem"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.JointConsistency"
+description = "On the vocabulary, the spliced valuation agrees with the first valuation."
+
+[theorem.SpliceIffOfNotMem]
+order = 14
+id = "SpliceIffOfNotMem"
+name = "Splice outside the vocabulary"
+lean_symbol = "SE.CommonGround.Logic.splice_iff_of_not_mem"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.JointConsistency"
+description = "Outside the vocabulary, the spliced valuation agrees with the second valuation."
+
+[theorem.SatisfiableUnionOfDisjoint]
+order = 15
+id = "SatisfiableUnionOfDisjoint"
+name = "Joint consistency over disjoint vocabularies"
+lean_symbol = "SE.CommonGround.Logic.satisfiable_union_of_disjoint"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Logic.JointConsistency"
+description = "Satisfiable theories over disjoint vocabularies have a satisfiable union."
+
+[theorem.SatisfiableUnionIffPermits]
+order = 16
+id = "SatisfiableUnionIffPermits"
+cite_id = "se110.proposition.SatisfiableUnionIffPermits"
+name = "Compatibility reduces to the interface"
+lean_symbol = "SE.CommonGround.Scope.satisfiable_union_iff_permits"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Scope.Interface"
+description = "A theory over a vocabulary is jointly satisfiable with a framework exactly when the framework permits some valuation that satisfies the theory."
+
+[theorem.ValuationDiagramInVocabulary]
+order = 17
+id = "ValuationDiagramInVocabulary"
+name = "Diagram lies in the vocabulary"
+lean_symbol = "SE.CommonGround.Scope.valuationDiagram_in_vocabulary"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Scope.Interface"
+description = "The diagram of a valuation on a vocabulary lies in the vocabulary."
+
+[theorem.SatisfiesValuationDiagram]
+order = 18
+id = "SatisfiesValuationDiagram"
+name = "Valuation satisfies its diagram"
+lean_symbol = "SE.CommonGround.Scope.satisfies_valuationDiagram"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Scope.Interface"
+description = "A valuation satisfies its own diagram."
+
+[theorem.NeutralOnOfAvoids]
+order = 19
+id = "NeutralOnOfAvoids"
+name = "Avoidance gives neutrality"
+lean_symbol = "SE.CommonGround.Scope.neutralOn_of_avoids"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Scope.InScope"
+description = "A satisfiable framework that avoids a vocabulary is neutral on it."
+
+[theorem.NeutralOnIffCompatible]
+order = 20
+id = "NeutralOnIffCompatible"
+cite_id = "se110.proposition.NeutralOnIffCompatible"
+name = "Neutrality is compatibility with every satisfiable theory"
+lean_symbol = "SE.CommonGround.Scope.neutralOn_iff_compatible"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Scope.InScope"
+description = "A framework is neutral on a vocabulary exactly when it is jointly satisfiable with every satisfiable theory over the vocabulary."
+
+[theorem.Dichotomy]
+order = 21
+id = "Dichotomy"
+cite_id = "se110.proposition.Dichotomy"
+name = "Scope dichotomy"
+lean_symbol = "SE.CommonGround.Scope.dichotomy"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Scope.Dichotomy"
+description = "A framework is neutral on a vocabulary, or some satisfiable theory over the vocabulary is not jointly satisfiable with it."
+
+[theorem.AdmissibleBareIff]
+order = 22
+id = "AdmissibleBareIff"
+name = "Admissible in the bare system"
+lean_symbol = "SE.CommonGround.Result.admissible_bare_iff"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Result.Independence"
+description = "In the bare framework system, a framework is admissible exactly when it is satisfiable."
+
+[theorem.SatisfiesCombineIff]
+order = 23
+id = "SatisfiesCombineIff"
+name = "Satisfies combination"
+lean_symbol = "SE.CommonGround.Result.satisfies_combine_iff"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Result.Independence"
+description = "A valuation satisfies a combined theory exactly when it satisfies both parts."
+
+[theorem.CompatibleBareIffValid]
+order = 24
+id = "CompatibleBareIffValid"
+cite_id = "se110.proposition.CompatibleBareIffValid"
+name = "Bare compatibility is validity"
+lean_symbol = "SE.CommonGround.Result.compatible_bare_iff_valid"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Result.Independence"
+description = "In the bare framework system, a commitment set is framework-compatible exactly when every valuation satisfies it."
+
+[theorem.NotCompatibleBareOfNontrivial]
+order = 25
+id = "NotCompatibleBareOfNontrivial"
+name = "Nontrivial fragments are not compatible in the bare system"
+lean_symbol = "SE.CommonGround.Result.not_compatible_bare_of_nontrivial"
+lean_kind = "theorem"
+source_module = "SE.CommonGround.Result.Independence"
+description = "A nontrivial referential fragment is not framework-compatible when admissibility is the only condition on frameworks."

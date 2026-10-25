@@ -1,0 +1,74 @@
+# ============================================================
+# Common Ground Vocabulary
+# se-theory-common-ground
+# ============================================================
+# Public Lean definitions that are not Prop-valued: the object language, valuations, vocabularies, the consequence system, and constructions.
+
+schema = "se-vocabulary-registry-1"
+kind = "vocabulary"
+repo = "se-theory-common-ground"
+surface_module = "SE.CommonGround"
+namespace = "SE.CommonGround"
+
+[vocabulary.Language]
+order = 1
+id = "Language"
+name = "Language"
+lean_symbol = "SE.CommonGround.Logic.language"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Propositional"
+description = "The Neutral Substrate propositional language whose propositions are the formulas over a type of atoms."
+
+[vocabulary.Valuation]
+order = 2
+id = "Valuation"
+name = "Valuation"
+lean_symbol = "SE.CommonGround.Logic.Valuation"
+lean_kind = "abbrev"
+source_module = "SE.CommonGround.Logic.Semantics"
+description = "A valuation assigns a Lean proposition to each atom."
+
+[vocabulary.SemanticConsequenceSystem]
+order = 3
+id = "SemanticConsequenceSystem"
+name = "Semantic consequence system"
+lean_symbol = "SE.CommonGround.Logic.semanticConsequenceSystem"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.Consequence"
+description = "Semantic consequence over formulas as a Neutral Substrate consequence system."
+
+[vocabulary.Vocabulary]
+order = 4
+id = "Vocabulary"
+name = "Vocabulary"
+lean_symbol = "SE.CommonGround.Logic.Vocabulary"
+lean_kind = "abbrev"
+source_module = "SE.CommonGround.Logic.Vocabulary"
+description = "A vocabulary is a set of atoms."
+
+[vocabulary.Splice]
+order = 5
+id = "Splice"
+name = "Splice"
+lean_symbol = "SE.CommonGround.Logic.splice"
+lean_kind = "def"
+source_module = "SE.CommonGround.Logic.JointConsistency"
+description = "The valuation that agrees with the first valuation on a vocabulary and with the second outside it."
+
+[vocabulary.ValuationDiagram]
+order = 6
+id = "ValuationDiagram"
+name = "Valuation diagram"
+lean_symbol = "SE.CommonGround.Scope.valuationDiagram"
+lean_kind = "def"
+source_module = "SE.CommonGround.Scope.Interface"
+description = "The theory over a vocabulary that says exactly what a valuation says about the atoms of the vocabulary."
+
+[vocabulary.BareFrameworkSystem]
+order = 7
+id = "BareFrameworkSystem"
+name = "Bare framework system"
+lean_symbol = "SE.CommonGround.Result.bareFrameworkSystem"
+lean_kind = "def"
+source_module = "SE.CommonGround.Result.Independence"
+description = "The framework system whose carrier is the theories themselves and in which every non-logical admissibility condition holds."
