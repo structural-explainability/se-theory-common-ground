@@ -72,7 +72,7 @@ function Invoke-Step {
 function Get-ReferenceSnapshot {
     $roots = @(
         (Join-Path $PSScriptRoot "reference")
-        (Join-Path $PSScriptRoot "data\common-ground")
+        (Join-Path $PSScriptRoot "data\neutral-substrate")
     )
 
     $files = Get-ChildItem `

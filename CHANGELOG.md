@@ -13,6 +13,20 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.2.0] - 2026-10-26
+
+### Updated
+
+- moved out lint/
+- replaced Mathlib with MathlibMini
+- minor documentation updates
+- partial uvx pup-up of supporting files
+- clarifications
+- Updated license notice.
+- Added headers to Lean files.
+
+---
+
 ## [0.1.0] - 2026-10-25
 
 ### Added
@@ -136,7 +150,7 @@ git push origin vX.Y.Z
 Create GitHub Release after pushing tag, for example with a command like this:
 
 ```shell
-gh release create v0.1.0 --verify-tag --title "0.1.0" --generate-notes
+gh release create v0.2.0 --verify-tag --title "0.2.0" --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -148,7 +162,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-common-ground/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-common-ground/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/structural-explainability/se-theory-common-ground/releases/tag/v0.2.0
 [0.1.0]: https://github.com/structural-explainability/se-theory-common-ground/releases/tag/v0.1.0
 
 <!-- markdownlint-enable MD024 -->

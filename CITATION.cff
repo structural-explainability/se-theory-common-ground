@@ -12,8 +12,8 @@ message: "If you use this work, please cite it using the metadata in CITATION.cf
 type: software
 
 title: "Formal Theory: Common Ground"
-version: "0.1.0" # CUSTOM: Updated to match the current release version of the project
-date-released: "2026-10-25" # CUSTOM: Updated to match the current release date of the project
+version: "0.2.0" # CUSTOM: Updated to match the current release version of the project
+date-released: "2026-10-26" # CUSTOM: Updated to match the current release date of the project
 
 authors:
   - family-names: Case
@@ -24,7 +24,7 @@ authors:
 repository-code: "https://github.com/structural-explainability/se-theory-common-ground"
 url: "https://github.com/structural-explainability/se-theory-common-ground"
 
-license: MIT
+license: Apache-2.0
 
 abstract: >
   Lean 4 formalization of fragment-relative common ground in Structural
