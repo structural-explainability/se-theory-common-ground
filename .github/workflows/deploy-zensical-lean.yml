@@ -1,7 +1,7 @@
 # ============================================================
 # .github/workflows/deploy-zensical-lean.yml (LEAN+ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-10-02
+# Updated: 2026-10-26
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -64,6 +64,11 @@ jobs:
           cache-dependency-glob: "uv.lock"
           # WHY: Invalidate dependency cache when the committed lockfile changes.
 
+      - name: A4) Install project Python
+        run: uv python install
+        # WHY: Ensures the Python version declared in .python-version is available.
+        # OBS: uv manages the interpreter locally in the CI environment.
+
       - name: A5) Install dependencies from committed lockfile
         run: uv sync --frozen
         # WHY: Install all configured dependency groups exactly from uv.lock.
@@ -79,7 +84,7 @@ jobs:
         # WHY: Version output makes deployment logs easier to debug when tools change.
 
       # ============================================================
-      # AA) ASSEMBLE: Checkout code and set up environment
+      # AA) ASSEMBLE LEAN ENVIRONMENT
       # ============================================================
 
       - name: AA1) Set up Lean
@@ -93,6 +98,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --yes build-essential
+
+      - name: AA3) Show lean tool versions
+        run: |
+          lean --version
+          lake --version
+          # WHY: Version output makes Lean documentation failures easier to diagnose.
 
       # ============================================================
       # B) BUILD ZENSICAL SITE
@@ -164,7 +175,7 @@ jobs:
           # directory named after the module's first component. Common Ground
           # and Neutral Substrate both live under SE/, so expose each package's
           # SE tree inside the other's lib dir before doc-gen4 runs.
-          COMMON_GROUND_LIB="$GITHUB_WORKSPACE/.lake/build/lib/lean"
+          THIS_LIB="$GITHUB_WORKSPACE/.lake/build/lib/lean"
           NEUTRAL_SUBSTRATE_LIB="$GITHUB_WORKSPACE/.lake/packages/se-theory-neutral-substrate/.lake/build/lib/lean"
           merge_se() {
             src="$1"; dst="$2"
@@ -175,8 +186,8 @@ jobs:
               [ -e "$dst/$rel" ] || [ -L "$dst/$rel" ] || ln -s "$f" "$dst/$rel"
             done
           }
-          merge_se "$COMMON_GROUND_LIB" "$NEUTRAL_SUBSTRATE_LIB"
-          merge_se "$NEUTRAL_SUBSTRATE_LIB" "$COMMON_GROUND_LIB"
+          merge_se "$THIS_LIB" "$NEUTRAL_SUBSTRATE_LIB"
+          merge_se "$NEUTRAL_SUBSTRATE_LIB" "$THIS_LIB"
 
           lake build SE.CommonGround:docs
 
