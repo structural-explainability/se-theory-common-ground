@@ -1,4 +1,4 @@
-{"version": "1.2.0",
+{"version": "1.3.0",
  "packagesDir": ".lake/packages",
  "packages":
  [{"url":
@@ -6,10 +6,10 @@
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "2b0d7b3c59aabb2faf26c35e21b9b6391382e4fb",
+   "rev": "fe60594f25e36d0acfbaf4fa9ce8d510f654cf89",
    "name": "«se-theory-neutral-substrate»",
    "manifestFile": "lake-manifest.json",
-   "inputRev": "v0.12.1",
+   "inputRev": "v0.13.0",
    "inherited": false,
    "configFile": "lakefile.toml"},
   {"url": "https://github.com/mathlib-mini/mathlib-mini.git",

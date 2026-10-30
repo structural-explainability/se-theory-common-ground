@@ -1,7 +1,7 @@
 # ============================================================
-# .github/workflows/deploy-zensical-lean.yml (LEAN+ALL-PY-REPOS)
+# .github/workflows/deploy-zensical-lean.yml (CUSTOM LEAN+ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-10-26
+# Updated: 2026-10-30
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -39,7 +39,7 @@ jobs:
   docs:
     name: Deploy Documentation site
     runs-on: ubuntu-latest
-    timeout-minutes: 60 # WHY: Fail fast if a step hangs unexpectedly.
+    timeout-minutes: 30 # WHY: Fail fast if a step hangs unexpectedly.
 
     steps:
       # ============================================================
@@ -93,11 +93,15 @@ jobs:
           build: false
           test: false
           lint: false
+        # WHY: Install the repository's declared Lean toolchain for API docs.
+        # OBS: Build, test, and lint are handled by the Lean CI workflow.
 
       - name: AA2) Install native build tools
         run: |
           sudo apt-get update
           sudo apt-get install --yes build-essential
+        # WHY: Lean API documentation generation requires native build tooling
+        # on the Linux GitHub Actions runner.
 
       - name: AA3) Show lean tool versions
         run: |
@@ -133,7 +137,7 @@ jobs:
         #      configures a different output directory.
 
       # ============================================================
-      # BB) BUILD LEAN API DOCUMENTATION
+      # BB) BUILD LEAN API DOCUMENTATION (CUSTOM)
       # ============================================================
 
       - name: BB1) Prepare Lean API documentation build
@@ -178,8 +182,11 @@ jobs:
           THIS_LIB="$GITHUB_WORKSPACE/.lake/build/lib/lean"
           NEUTRAL_SUBSTRATE_LIB="$GITHUB_WORKSPACE/.lake/packages/se-theory-neutral-substrate/.lake/build/lib/lean"
           merge_se() {
-            src="$1"; dst="$2"
+            src="$1"
+            dst="$2"
+
             mkdir -p "$dst/SE"
+
             for f in "$src"/SE/* "$src"/SE.*; do
               [ -e "$f" ] || continue
               rel="${f#"$src"/}"
@@ -205,6 +212,7 @@ jobs:
           rm -rf site/lean
           mkdir -p site/lean
           cp -R docbuild/.lake/build/doc/. site/lean/
+        # WHY: Publish generated Lean API documentation under /lean/.
 
       - name: BB5) Verify combined documentation site
         run: |
@@ -216,6 +224,7 @@ jobs:
             >> "$GITHUB_STEP_SUMMARY"
           echo "- Lean API reference: site/lean/index.html" \
             >> "$GITHUB_STEP_SUMMARY"
+        # WHY: Confirm both documentation surfaces exist before deployment.
 
       # ============================================================
       # D) DEPLOY

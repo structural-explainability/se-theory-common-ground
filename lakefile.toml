@@ -13,7 +13,7 @@
 # ============================================================
 
 name = "se-theory-common-ground"
-version = "0.2.0" # CUSTOM: Sets the current release version of the project
+version = "0.2.1" # CUSTOM: Sets the current release version
 license = "Apache-2.0"
 
 # ============================================================
@@ -36,7 +36,7 @@ rev = "v0.2.0"
 [[require]]
 name = "se-theory-neutral-substrate"
 git = "https://github.com/structural-explainability/se-theory-neutral-substrate"
-rev = "v0.12.1"
+rev = "v0.13.0"
 
 # ============================================================
 # === PUBLIC LIBRARY ===
@@ -56,10 +56,7 @@ rev = "v0.12.1"
 [[lean_lib]]
 name = "SE.CommonGround"
 roots = ["SE.CommonGround"]
-globs = [
-    "SE",
-    "SE.CommonGround.*",
-]
+globs = ["SE", "SE.CommonGround.*"]
 
 # ============================================================
 # === TEST LIBRARY ===

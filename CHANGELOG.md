@@ -13,6 +13,20 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.2.1] - 2026-10-30
+
+### Updated
+
+- Updated the Lean toolchain (see `lean-toolchain`).
+- `rel.ps1`: added `lake clean`, `CITATION.cff` validation, and Markdown lint.
+- `ci-lean.yml`: added `CITATION.cff` validation, SE manifest validation,
+  Markdown lint, and cancellation of superseded runs on the same branch.
+- `leanchecker` and the axiom audit are skipped in this repo because it
+  depends on other SE theory packages. A source scan for `axiom`
+  declarations and `native_decide` runs instead.
+
+---
+
 ## [0.2.0] - 2026-10-26
 
 ### Updated
@@ -96,12 +110,12 @@ Follow these steps exactly when creating a new release.
 
 1.1. CITATION.cff: update version and date-released
 1.2. lakefile.toml: update version
-1.3. CHANGELOG.md: add section, move unreleased entries, update links, release command
+1.3. CHANGELOG.md: add section, move unreleased entries, update links, update release command
 1.4. pyproject.toml: update version (near top of the file)
 
 ### Task 2. Set up and Validate
 
-```shell
+```pwsh
 # set up or update Python environment
 # Run repository checks.
 .\sit.ps1
@@ -150,7 +164,7 @@ git push origin vX.Y.Z
 Create GitHub Release after pushing tag, for example with a command like this:
 
 ```shell
-gh release create v0.2.0 --verify-tag --title "0.2.0" --generate-notes
+gh release create v0.2.1 --verify-tag --title "0.2.1" --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -162,7 +176,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-common-ground/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-common-ground/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/structural-explainability/se-theory-common-ground/releases/tag/v0.2.1
 [0.2.0]: https://github.com/structural-explainability/se-theory-common-ground/releases/tag/v0.2.0
 [0.1.0]: https://github.com/structural-explainability/se-theory-common-ground/releases/tag/v0.1.0
 
