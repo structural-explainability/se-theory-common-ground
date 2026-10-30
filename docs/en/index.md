@@ -15,6 +15,8 @@ predicates, assumptions, theorems, and proof obligations.
 - [Paper: Common Grounds (arXiv:2601.14271)](https://doi.org/10.48550/arXiv.2601.14271)
 - [Reference registries](https://github.com/structural-explainability/se-theory-common-ground/tree/main/reference)
   mapping the paper's stable `se100.*` tags to Lean declarations
+- [Research Doubts and Open Questions](https://github.com/structural-explainability/se-theory-common-ground/blob/main/DOUBTS.md)
+- [Research Decisions](https://github.com/structural-explainability/se-theory-common-ground/blob/main/DECISIONS.md)
 
 ## Common Ground
 
