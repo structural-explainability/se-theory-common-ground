@@ -22,5 +22,6 @@ public import SE.CommonGround.Result.Independence
 /-!
 # Common Ground
 
-Public import surface for the Structural Explainability Common Ground theory.
+Public import surface for the Structural Explainability
+Common Ground theory.
 -/

@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module -- shake: keep-all
 
 import SETest.CommonGround.Logic.Propositional
@@ -18,6 +23,5 @@ import SETest.CommonGround.Spec
 /-!
 # Common Ground Tests
 
-Complete test-module inventory for the Structural Explainability
-Common Ground theory.
+
 -/
